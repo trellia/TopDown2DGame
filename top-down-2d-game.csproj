@@ -1,0 +1,44 @@
+<Project Sdk="Godot.NET.Sdk/4.2.2">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net7.0</TargetFramework>
+    <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'ios' ">net8.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RootNamespace>topdown2dgame</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="fonts\" />
+    <Folder Include="sketches\ui-design\" />
+    <Folder Include="src\Characters\" />
+    <Folder Include="src\Levels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="credits\credit-freetype.txt" />
+    <Content Include="credits\credit-godot-engine.txt" />
+    <Content Include="docs\index.md" />
+    <Content Include="icon.svg" />
+    <Content Include="icon.svg.import" />
+    <Content Include="project.godot" />
+    <Content Include="README.md" />
+    <Content Include="sketches\templates\template-16_9.kra" />
+    <Content Include="sketches\templates\ui-flows.kra" />
+    <Content Include="sketches\templates\ui-flows.kra~" />
+    <Content Include="src\Art\placeholder-enemy.svg" />
+    <Content Include="src\Art\placeholder-enemy.svg.import" />
+    <Content Include="src\Art\placeholder-player.svg" />
+    <Content Include="src\Art\placeholder-player.svg.import" />
+    <Content Include="src\Enemies\Enemy.tscn" />
+    <Content Include="top-down-2d-game.sln" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="art\**" />
+    <Compile Remove="src\enemies\**" />
+    <Compile Remove="src\Menus\**" />
+    <Compile Include="src\Enemies\Enemy.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="art\**" />
+    <EmbeddedResource Remove="src\enemies\**" />
+    <EmbeddedResource Remove="src\Menus\**" />
+  </ItemGroup>
+</Project>
