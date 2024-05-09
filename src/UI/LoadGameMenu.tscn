@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxf4awtncp0iy"]
+
+[ext_resource type="Script" path="res://src/UI/LoadGameMenu.cs" id="1_cf0f1"]
+
+[node name="LoadGameMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cf0f1")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -85.5
+offset_right = 73.0
+offset_bottom = 85.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+text = "Load Game Menu
+
+This is a placeholder for an upcoming feature.
+
+"
+fit_content = true
+
+[node name="Placeholder" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Nonfunctional Button"
+
+[node name="ReturnToMainMenuButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Return to Main Menu"
+
+[node name="QuitToDesktopButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit to Desktop"
+
+[connection signal="pressed" from="VBoxContainer/Placeholder" to="." method="_OnNonfunctionalButtonPressed"]
+[connection signal="pressed" from="VBoxContainer/ReturnToMainMenuButton" to="." method="_OnReturnToMainMenuButtonPressed"]
+[connection signal="pressed" from="VBoxContainer/QuitToDesktopButton" to="." method="_OnQuitToDesktopButtonPressed"]

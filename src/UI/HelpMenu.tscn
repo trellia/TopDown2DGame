@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://doc3bdhuw0ex2"]
+
+[ext_resource type="Script" path="res://src/UI/HelpMenu.cs" id="1_s2obx"]
+
+[node name="HelpMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s2obx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -85.5
+offset_right = 73.0
+offset_bottom = 85.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+text = "Help Menu
+
+This is the Help menu. When a new feature is added to the game, it will be explained here.
+
+Click the Return button to return to the previous scene."
+fit_content = true
+
+[node name="ReturnButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Return"
+
+[connection signal="pressed" from="VBoxContainer/ReturnButton" to="." method="_OnReturnButtonPressed"]
