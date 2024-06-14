@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b16o332bo4djc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iaiv"]
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwvfv"]
+size = Vector2(16, 16)
+
+[node name="Template" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_8iaiv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nwvfv")

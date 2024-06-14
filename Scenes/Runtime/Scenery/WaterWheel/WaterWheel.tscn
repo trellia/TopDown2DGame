@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2hnta2y1eavp"]
+
+[ext_resource type="Script" path="res://Scripts/Runtime/Scenery/WaterWheel.cs" id="1_hlynx"]
+[ext_resource type="Texture2D" uid="uid://bb0ksuhsi8b24" path="res://Content/Sprites/Objects/Tile.png" id="2_bqv2u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fxtf"]
+size = Vector2(16, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uw5w6"]
+atlas = ExtResource("2_bqv2u")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyls1"]
+atlas = ExtResource("2_bqv2u")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ltvrm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uw5w6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qyls1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uw5w6")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 15.0
+}]
+
+[node name="WaterWheel" type="Area2D"]
+script = ExtResource("1_hlynx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 40)
+shape = SubResource("RectangleShape2D_6fxtf")
+
+[node name="Paddles" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_ltvrm")
+animation = &"spin"
+frame_progress = 0.238368
+
+[node name="Paddles2" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 24)
+sprite_frames = SubResource("SpriteFrames_ltvrm")
+animation = &"spin"
+frame_progress = 0.238368
+
+[node name="Paddles3" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 40)
+sprite_frames = SubResource("SpriteFrames_ltvrm")
+animation = &"spin"
+frame_progress = 0.238368
+
+[node name="Paddles4" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 56)
+sprite_frames = SubResource("SpriteFrames_ltvrm")
+animation = &"spin"
+frame_progress = 0.238368
+
+[node name="Paddles6" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 72)
+sprite_frames = SubResource("SpriteFrames_ltvrm")
+animation = &"spin"
+frame_progress = 0.238368

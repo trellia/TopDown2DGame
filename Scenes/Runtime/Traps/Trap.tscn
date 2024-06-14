@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://yu7mkjv41po8"]
+
+[ext_resource type="Script" path="res://Scripts/Runtime/Traps/Trap.cs" id="1_n42ys"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aaqhy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwvfv"]
+size = Vector2(16, 16)
+
+[node name="(Base Class) Trap" type="Area2D"]
+script = ExtResource("1_n42ys")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_aaqhy")
+frame_progress = 0.440854
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nwvfv")

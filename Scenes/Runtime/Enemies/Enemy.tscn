@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxt406rvkk7y2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aaqhy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwvfv"]
+size = Vector2(16, 16)
+
+[node name="Enemy" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_aaqhy")
+frame_progress = 0.440854
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nwvfv")

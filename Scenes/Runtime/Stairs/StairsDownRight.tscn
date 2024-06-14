@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dn733nslfw31g"]
+
+[ext_resource type="Script" path="res://Scripts/Runtime/Teleporters/Stairs.cs" id="1_aysce"]
+[ext_resource type="Texture2D" uid="uid://bb0ksuhsi8b24" path="res://Content/Sprites/Objects/Tile.png" id="2_wj8jy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhrkj"]
+atlas = ExtResource("2_wj8jy")
+region = Rect2(112, 48, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwvfv"]
+size = Vector2(16, 16)
+
+[node name="StairsDownRight" type="Area2D"]
+script = ExtResource("1_aysce")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_qhrkj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nwvfv")

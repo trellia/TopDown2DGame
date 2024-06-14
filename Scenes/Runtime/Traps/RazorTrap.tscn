@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://cc714qiyhqqli"]
+
+[ext_resource type="Script" path="res://Scripts/Runtime/Traps/RazorTrap.cs" id="1_t80ws"]
+[ext_resource type="Texture2D" uid="uid://didfwund4ds3r" path="res://Content/Sprites/TSA_Traps.png" id="2_k7f3t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_370jh"]
+atlas = ExtResource("2_k7f3t")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8obnp"]
+atlas = ExtResource("2_k7f3t")
+region = Rect2(160, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aaqhy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_370jh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8obnp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwvfv"]
+size = Vector2(16, 16)
+
+[node name="RazorTrap" type="Area2D"]
+script = ExtResource("1_t80ws")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_aaqhy")
+frame_progress = 0.70159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nwvfv")

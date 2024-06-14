@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7f2a2i2add4n"]
+
+[ext_resource type="Script" path="res://Scripts/Runtime/UI/MenuManager.cs" id="1_6mj87"]
+[ext_resource type="PackedScene" uid="uid://cxf4awtncp0iy" path="res://Scenes/Runtime/UI/LoadGameMenu.tscn" id="2_sbycc"]
+[ext_resource type="PackedScene" uid="uid://bmkfw6rayqnbx" path="res://Scenes/Runtime/UI/SettingsMenu.tscn" id="3_j4l5g"]
+[ext_resource type="PackedScene" uid="uid://doc3bdhuw0ex2" path="res://Scenes/Runtime/UI/HelpMenu.tscn" id="4_c5xfy"]
+[ext_resource type="PackedScene" uid="uid://kmbm5iq5ujqm" path="res://Scenes/Runtime/UI/CreditsMenu.tscn" id="5_dv31p"]
+[ext_resource type="PackedScene" uid="uid://ynmv6r4rf30f" path="res://Scenes/Runtime/UI/MainMenu.tscn" id="5_y6gsn"]
+
+[node name="MenuManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6mj87")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="LoadGameMenu" parent="." instance=ExtResource("2_sbycc")]
+visible = false
+layout_mode = 1
+
+[node name="SettingsMenu" parent="." instance=ExtResource("3_j4l5g")]
+visible = false
+layout_mode = 1
+
+[node name="HelpMenu" parent="." instance=ExtResource("4_c5xfy")]
+visible = false
+layout_mode = 1
+offset_right = -0.00012207
+
+[node name="CreditsMenu" parent="." instance=ExtResource("5_dv31p")]
+layout_mode = 1
+
+[node name="MainMenu" parent="." instance=ExtResource("5_y6gsn")]
+layout_mode = 1
