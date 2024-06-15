@@ -3,6 +3,7 @@ using TopDown2DGame.Scripts.Runtime.Common;
 using TopDown2DGame.Scripts.Runtime.Teleporters;
 using TopDown2DGame.Scripts.Runtime.Traps;
 using TopDown2DGame.Scripts.Runtime.Enemies;
+using TopDown2DGame.Scripts.Runtime.Doors;
 
 namespace TopDown2DGame.Scripts.Runtime.Players;
 
@@ -203,26 +204,20 @@ public partial class Player : CharacterBody2D
         foreach (var node in GetTree().GetNodesInGroup("Doors"))
         {
             GD.Print($"Checking Group: Doors: {node.Name}");
-            if (node is UnlockedDoor door)
-            {
-                door.PlayerEnteredDoor += OnPlayerEnteredUnlockedDoor;
-                door.PlayerExitedDoor += OnPlayerExitedUnlockedDoor;
-            }
+            if (node is not UnlockedDoor door) continue;
+            door.PlayerEnteredDoor += OnPlayerEnteredUnlockedDoor;
+            door.PlayerExitedDoor += OnPlayerExitedUnlockedDoor;
         }
     }
 
     private void OnPlayerEnteredUnlockedDoor(Vector2 destination)
     {
         GD.Print($"Player opened the door.");
-        // GD.Print($"Moving to destination: {destination}");
-        // Position = destination;
     }
 
     private void OnPlayerExitedUnlockedDoor(Vector2 destination)
     {
         GD.Print($"Player closed the door.");
-        // GD.Print($"Moving to destination: {destination}");
-        // Position = destination;
     }
 
     private void SetupOnPlayerEnteredLocalTeleporter()

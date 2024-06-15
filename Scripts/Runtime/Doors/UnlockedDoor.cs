@@ -1,14 +1,10 @@
 using Godot;
 using TopDown2DGame.Scripts.Runtime.Players;
 
-namespace TopDown2DGame.Scripts.Runtime.Teleporters;
+namespace TopDown2DGame.Scripts.Runtime.Doors;
 
 public partial class UnlockedDoor : Area2D
 {
-    [Export] public NodePath TargetDestinationNodePath;
-
-    private Vector2 _targetPosition;
-
     [Signal]
     public delegate void PlayerEnteredDoorEventHandler(Vector2 destination);
 
@@ -20,26 +16,23 @@ public partial class UnlockedDoor : Area2D
         AddToGroup("Doors");
         BodyEntered += OnBodyEntered;
         BodyExited += OnBodyExited;
-
-        var targetPositionNode = GetNode<Marker2D>(TargetDestinationNodePath);
-        _targetPosition = targetPositionNode.Position;
     }
 
     private void OnBodyEntered(Node body)
     {
-        GD.Print($"Door '{Name}' opened.");
         if (body is not Player) return;
+        GD.Print($"Door '{Name}' opened by {body.Name}.");
         var animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         animatedSprite2D.Play("opening");
-        EmitSignal(SignalName.PlayerEnteredDoor, _targetPosition);
+        EmitSignal(SignalName.PlayerEnteredDoor);
     }
 
     private void OnBodyExited(Node body)
     {
-        GD.Print($"Door '{Name}' closed.");
         if (body is not Player) return;
+        GD.Print($"Door '{Name}' closed by {body.Name}.");
         var animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         animatedSprite2D.Play("closing");
-        EmitSignal(SignalName.PlayerExitedDoor, _targetPosition);
+        EmitSignal(SignalName.PlayerExitedDoor);
     }
 }
