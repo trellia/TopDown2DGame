@@ -31,9 +31,11 @@ public partial class MenuManager : Control
         GD.Print($"Calling ShowMenu with {menuName}");
         foreach (var menu in _menus)
         {
-            GD.Print($"Menu {menu.Name}; Visibility: {menu.Visible}");
             menu.Visible = menu.Name == menuName;
-            GD.Print($"Menu {menu.Name}; Visibility: {menu.Visible}");
+            GD.Print(
+                menu.Visible
+                    ? $"-> Menu {menu.Name} visibility updated to {menu.Visible}"
+                    : $"Menu {menu.Name} current visibility: {menu.Visible}");
         }
 
         GD.Print($"_menus: {_menus.Count}");
