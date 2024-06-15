@@ -13,7 +13,7 @@ public partial class CreditsMenu : Control
 
         _menuManager = GetParent<MenuManager>();
 
-        Button returnButton = GetNode<Button>("VBoxContainer/ReturnButton");
+        Button returnButton = GetNode<Button>("ReturnButton");
         returnButton.Pressed += OnReturnButtonPressed;
         GD.Print("CreditsMenu is ready.");
     }
