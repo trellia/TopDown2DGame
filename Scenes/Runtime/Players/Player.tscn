@@ -139,8 +139,9 @@ animations = [{
 "speed": 4.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4q53"]
-size = Vector2(12, 10)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0kd6l"]
+radius = 5.0
+height = 14.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(320, 170)
@@ -153,7 +154,8 @@ animation = &"WalkDown"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_w4q53")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_0kd6l")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
